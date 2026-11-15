@@ -1,0 +1,22 @@
+{
+  "name": "RAT (Radical Advanced Tools)",
+  "author": "Tom Berczeller",
+  "flags": [],
+  "api_version": 1,
+  "publish": {
+    "tags": [
+      "upscaling",
+      "optiscaler",
+      "dlss",
+      "fsr",
+      "xess",
+      "frame-generation",
+      "hdr",
+      "renodx",
+      "reshade",
+      "proton"
+    ],
+    "description": "RAT (Radical Advanced Tools): the all-in-one upscaler, frame generation, HDR and shader suite for SteamOS and Linux, on AMD, NVIDIA and Intel GPUs. Inject and tune DLSS, FSR and XeSS per game (d4r, HelixSR, OptiScaler and forks), native or spoofed, set up OptiScaler frame generation with a base framerate cap and latency presets, RenoDX HDR and ReShade with per-shader parameters, all from Game Mode with the controller.",
+    "image": ""
+  }
+}
