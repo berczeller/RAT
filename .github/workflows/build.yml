@@ -26,16 +26,18 @@ jobs:
         with:
           name: RAT
           path: out/*
-      - name: Publish release (tags only)
+      - name: Attach the build to the release (tags only)
+        # The release itself is created by the maintainer (so it is published under their name), e.g.:
+        #   gh release create v1.2 --prerelease --title "RAT 1.2" --notes-file <(awk ... CHANGELOG.md)
+        # This step only uploads the zip and its checksum to it, waiting a few minutes for it to exist.
         if: startsWith(github.ref, 'refs/tags/v')
         env:
           GH_TOKEN: ${{ github.token }}
           TAG: ${{ github.ref_name }}
         run: |
-          VERSION="${TAG#v}"
-          # release notes: this version's section of CHANGELOG.md
-          awk -v v="## $VERSION" '$0 == v {on=1; next} /^## / && on {exit} on' CHANGELOG.md > notes.md
-          # every release starts as a pre-release; promote it once tested on a device:
-          #   gh release edit <tag> --prerelease=false --latest
-          gh release create "$TAG" out/* --title "RAT $VERSION" --notes-file notes.md --prerelease --verify-tag
+          for i in $(seq 1 30); do
+            gh release view "$TAG" >/dev/null 2>&1 && break
+            echo "Waiting for release $TAG to be created..."; sleep 20
+          done
+          gh release upload "$TAG" out/* --clobber
         shell: bash
