@@ -61,7 +61,7 @@ export function useStaged() {
 
 // --- text entry --------------------------------------------------------------------------------------------------
 
-function TextModal({ title, initial, hint, onDone, closeModal }: { title: string; initial: string; hint?: string; onDone: (v: string) => void; closeModal?: () => void }) {
+function TextModal({ title, initial, hint, onDone, closeModal }: { title: string; initial: string; hint?: string; onDone: (v: string | null) => void; closeModal?: () => void }) {
   const [v, setV] = useState(initial);
   return (
     <ConfirmModal
