@@ -1,6 +1,6 @@
 // What runs in a game, shown twice:
 //  * the boot HUD: when Steam starts a game RAT manages, a transient RAT-branded notification appears once the game's
-//    renderer is up ("RAT (Radical Advanced Tools) 1.1 (Running OptiScaler by cdozdil)", then native / spoofed upscaler,
+//    renderer is up ("RAT (Radical Advanced Tools) 1.1.0 (Running OptiScaler by cdozdil)", then native / spoofed upscaler,
 //    frame generation, ReShade and HDR). It fades out on its own after the same 7 s OptiScaler's splash uses.
 //    The injectors' own splash screens (OptiScaler, HelixSR Scaler) are left as their authors made them.
 //  * the launch banner in the panel while the selected game runs.

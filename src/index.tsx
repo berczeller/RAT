@@ -20,7 +20,7 @@ import { LookTab } from "./tabs/look";
 import { TuneTab } from "./tabs/tune";
 import { Dot, Header, hint, Line, RS, Row, Tabs, ThemeStyle, Tip } from "./theme";
 
-const VERSION = "1.1";
+const VERSION = "1.1.0";
 const SIDEBAR_NAME = "RAT (Radical Advanced Tools)";
 
 // --- state ------------------------------------------------------------------------------------------------------

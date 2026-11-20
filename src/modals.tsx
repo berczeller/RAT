@@ -235,7 +235,7 @@ export function confirm(title: string, body: React.ReactNode, ok: string, destru
 export function showAbout() {
   showModal(
     <ConfirmModal
-      strTitle="RAT (Radical Advanced Tools) 1.1"
+      strTitle="RAT (Radical Advanced Tools) 1.1.0"
       bAlertDialog
       strOKButtonText="Close"
       strDescription={

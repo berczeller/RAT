@@ -22,7 +22,7 @@ from .util import Paths, UserError, ci_path, is_within, log, read_json, run_stre
 
 __all__ = ["Manager", "REC_DIR", "REC_FILE", "OFF", "rec_file"]
 
-VERSION = "1.1"
+VERSION = "1.1.0"
 PRODUCT = "RAT (Radical Advanced Tools)"
 OFF = ".rat-off"
 RUNTIME_FILES = {

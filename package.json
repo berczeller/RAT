@@ -1,7 +1,7 @@
 {
   "name": "rat-radical-advanced-tools",
   "version": "1.1.0",
-  "description": "RAT (Radical Advanced Tools) 1.1: upscaler, frame generation, HDR and shader suite for SteamOS and Linux (AMD, NVIDIA, Intel).",
+  "description": "RAT (Radical Advanced Tools): upscaler, frame generation, HDR and shader suite for SteamOS and Linux (AMD, NVIDIA, Intel).",
   "type": "module",
   "scripts": {
     "build": "rollup -c",
