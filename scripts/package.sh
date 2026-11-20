@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Builds the installable Decky zip: out/RAT-<version>.zip (1.0.0 -> RAT-1.0.zip) containing RAT/{plugin.json, package.json, main.py,
+# Builds the installable Decky zip: out/RAT-<version>.zip (for example RAT-1.1.0.zip) containing RAT/{plugin.json, package.json, main.py,
 # dist/index.js, py_modules/, bin/7zz, LICENSE, README.md}.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 ROOT=$(pwd)
-VERSION=$(node -p "require('./package.json').version.replace(/\\.0$/, '')")
+VERSION=$(node -p "require('./package.json').version")
 SEVENZIP_URL=https://github.com/ip7z/7zip/releases/download/25.01/7z2501-linux-x64.tar.xz
 SEVENZIP_SHA256=4ca3b7c6f2f67866b92622818b58233dc70367be2f36b498eb0bdeaaa44b53f4
 
@@ -35,8 +35,8 @@ cp -r py_modules/rat "$P/py_modules/"
 find "$P" -name "__pycache__" -type d -prune -exec rm -rf {} +
 chmod 755 "$P/bin/7zz"
 mkdir -p out
-rm -f "out/RAT-$VERSION.zip"
+rm -f out/RAT-*.zip out/SHA256SUMS.txt
 (cd "$STAGE" && zip -qr -X "$ROOT/out/RAT-$VERSION.zip" RAT)
 rm -rf "$STAGE"
-(cd out && sha256sum "RAT-$VERSION.zip" > "RAT-$VERSION.zip.sha256")
+(cd out && sha256sum "RAT-$VERSION.zip" > SHA256SUMS.txt)
 echo "Built out/RAT-$VERSION.zip"
