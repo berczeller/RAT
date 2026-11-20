@@ -1,4 +1,5 @@
-* text=auto eol=lf
+* text=auto
+*.sh text eol=lf
 *.dll binary
 bin/7zz binary
 *.png binary

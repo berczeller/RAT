@@ -9,7 +9,7 @@
 ![Decky Loader](https://img.shields.io/badge/Decky%20Loader-plugin-ff8fa3?style=flat-square)
 ![SteamOS](https://img.shields.io/badge/SteamOS-Game%20Mode-1a9fff?style=flat-square)
 ![GPUs](https://img.shields.io/badge/GPU-AMD%20%7C%20NVIDIA%20%7C%20Intel-86dc8f?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.1-ffc36b?style=flat-square)
+![Version](https://img.shields.io/github/v/release/berczeller/RAT?style=flat-square&label=version&color=ffc36b)
 ![License](https://img.shields.io/badge/license-BSD--3--Clause-6fd6a0?style=flat-square)
 
 </div>
@@ -59,7 +59,7 @@ Developed on an AMD Radeon RX 9070 XT (MINISFORUM BD775i SE, Ryzen 7 7745HX) dri
 ## Install
 
 1. Install [Decky Loader](https://github.com/SteamDeckHomebrew/decky-loader).
-2. Download `RAT-1.1.zip` from Releases and copy it to the device.
+2. Download `RAT-1.1.0.zip` from [Releases](https://github.com/berczeller/RAT/releases/latest) and copy it to the device. `SHA256SUMS.txt` next to it has its checksum.
 3. Game Mode → **Decky → Settings → General** → enable **Developer mode**, then **Developer → Install plugin from ZIP file** and pick the zip.
 4. Open the Quick Access menu (**···**) and pick the rat: **RAT (Radical Advanced Tools)**.
 
@@ -108,7 +108,7 @@ Once installed: **Injection active** toggles it without removing files, **Update
 
 The essentials first, as toggles and notched sliders: **Sharpening** (RCAS / CAS), **Render resolution** (ratio override, output scaling), **Upscaler model** (DLSS preset, FSR 4 model) and **Overlay menu** (key, scale, FPS, splash), or d4r's model and watermark. Only keys the installed `.ini` has are listed.
 
-With **Show advanced** on: every key of the injector's own `.ini` (`OptiScaler.ini`, `d4r.ini`, `helixsr.ini`, `fakenvapi.ini`), grouped in collapsible sections. Controls are built from the authors' comments; **ⓘ What does this do?** shows the full comment and **✎ Custom value…** takes free input. Changes are staged and written with **Save .ini** while the game is closed, and they survive closing the Quick Access menu.
+With **Show advanced** on: every key of the injector's own `.ini` (`OptiScaler.ini`, `d4r.ini`, `helixsr.ini`, `fakenvapi.ini`), grouped in collapsible sections. Controls are built from the authors' comments; **What does this do?** shows the full comment and **Custom value** takes free input. Changes are staged and written with **Save .ini** while the game is closed, and they survive closing the Quick Access menu.
 
 ### HDR · RenoDX
 
@@ -289,7 +289,7 @@ pnpm install
 pnpm build            # dist/index.js
 pnpm typecheck
 pnpm test             # backend tests: fake Steam library, no network
-./scripts/package.sh  # -> out/RAT-1.1.zip (fetches 7-Zip into bin/ if missing)
+./scripts/package.sh  # -> out/RAT-1.1.0.zip (fetches 7-Zip into bin/ if missing)
 ```
 
 Integration tests with real release archives: `RAT_REAL_DIR=/path/with/archives pnpm test` (looks for `Optiscaler_*.7z`, `d4r-*.zip`, `HelixSR-*.zip`).
